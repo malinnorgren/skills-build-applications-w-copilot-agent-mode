@@ -87,7 +87,7 @@ DATABASES = {
     }
 }
 
-# Add the database engine for Django
+# Add the database engine for Django again
 DATABASES['default']['ENGINE'] = 'django.db.backends.dummy'
 
 
