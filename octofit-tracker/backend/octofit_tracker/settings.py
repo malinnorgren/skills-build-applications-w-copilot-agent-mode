@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-ju4-ky!r+r7x+&z(00@f&c0b)&q7v10loz&l6y4vv=#7r))_!a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -53,6 +53,20 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+    'PUT',
+    'PATCH',
+    'DELETE',
+    'OPTIONS',
+]
+CORS_ALLOW_HEADERS = [
+    'content-type',
+    'authorization',
+    'x-csrftoken',
+    'x-requested-with',
+]
 
 ROOT_URLCONF = "octofit_tracker.urls"
 
@@ -86,9 +100,6 @@ DATABASES = {
         'PORT': 27017,
     }
 }
-
-# Add the database engine for Django again
-DATABASES['default']['ENGINE'] = 'django.db.backends.dummy'
 
 
 # Password validation
